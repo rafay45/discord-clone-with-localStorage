@@ -55,7 +55,7 @@ nav>ul>li:hover {
 }
 
 .subscribe>h1 {
-    font-family: Arial Black ;
+    font-family: Arial Black;
     display: flex;
     line-height: 40px;
     font-size: 2.8em;
@@ -126,4 +126,75 @@ nav>a>button {
 
 nav>a>button:hover {
     background-color: rgb(185, 193, 202);
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    height: 80vh;
+    width: 100%;
+}
+
+#login {
+    display: flex;
+    border-radius: 5px;
+    background-color: #303030;
+    width: 56%;
+    height: 65vh;
+}
+
+#login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 1px solid white;
+    height: 100%;
+    width: 60%;
+}
+
+.welcome {
+    text-align: center;
+}
+
+#login-form>.welcome>h4 {
+    color: white;
+    font-weight: bold;
+}
+
+#login-form>.welcome>p {
+    color: rgb(177, 175, 175);
+    font-size: 15px;
+}
+
+.email {
+    width: 90%;
+}
+
+label {
+    color: rgb(177, 175, 175);
+    font-weight: 700;
+    font-size: 12px;
+}
+
+label>span {
+    color: rgb(245, 69, 69);
+}
+
+input {
+    text-align: justify;
+    border-radius: 4px;
+    border: none;
+    height: 3vw;
+    width: 100%;
+    color: white;
+    background-color: #1f1e1e;
+}
+
+input:focus {
+    outline: none;
+}
+.QR-info{
+    border: 1px solid red;
+    width: 44%;
 }
