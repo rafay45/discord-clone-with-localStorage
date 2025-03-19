@@ -1,5 +1,7 @@
 body {
     background-image: url(assets/background.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 * {
@@ -150,21 +152,21 @@ main {
 }
 
 #login {
-    padding: 32px;
     display: flex;
-    border-radius: 5px;
-    background-color: #303030;
-    width: 56%;
+    border-radius: 6px;
+    background-color: rgb(54, 54, 54);
+    width: 57%;
     height: 65vh;
 }
 
 #login-form {
+    padding: 32px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
     height: 100%;
-    width: 60%;
+    width: 58%;
 }
 
 .welcome {
@@ -172,7 +174,7 @@ main {
 }
 
 #login-form>.welcome>h4 {
-    color: white;
+    color: #F5F5F5;
     font-weight: bold;
 }
 
@@ -186,6 +188,7 @@ main {
 }
 
 .password {
+    margin-top: 3.5%;
     width: 100%;
 }
 
@@ -202,7 +205,7 @@ main {
 
 label {
     color: rgb(177, 175, 175);
-    font-weight: 700;
+    font-weight: 800;
     font-size: 12px;
 }
 
@@ -225,10 +228,12 @@ input:focus {
     outline: none;
 }
 
-.button{
+.button {
+    margin-top: 2%;
     width: 100%;
 }
-.button > button{
+
+.button>button {
     font-weight: bold;
     color: white;
     border: none;
@@ -238,19 +243,83 @@ input:focus {
     border-radius: 4px;
     transition: all 0.2s ease-in;
 }
-.button > button:hover{
+
+.button>button:hover {
     cursor: pointer;
     background-color: #3157ca;
 }
-.button>p{
+
+.button>p {
     margin-top: 2%;
     color: rgb(177, 175, 175);
     font-size: 13px;
 }
-.button>p>span{
+
+.button>p>span {
+    font-weight: bold;
     color: #1E90FF;
 }
-.button>p>span:hover{
+
+.button>p>span:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.QR-info {
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 43%;
+}
+.discordQR {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid white;
+    background-image: url(assets/discord-QR.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: white;
+    border-radius: 4px;
+    height: 28vh;
+    width: 13vw;
+}
+
+.dis-icon {
+    border: 4px solid white;
+    height: 40px;
+    width: 40px;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+.login-info {
+    margin-top: 10%;
+    text-align: center;
+}
+
+.login-info>h4 {
+    color: white;
+    font-weight: bold;
+}
+
+.login-info>p {
+    font-size: 14px;
+    color: rgb(177, 175, 175);
+}
+
+.login-info>span {
+    font-size: 13px;
+    color: #1E90FF;
+}
+
+.login-info>span:hover {
     cursor: pointer;
     text-decoration: underline;
 }

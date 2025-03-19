@@ -1,42 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="assets/discord.png" type="image/x-icon">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <title>Discord</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="assets/discord.png" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <title>Discord</title>
 </head>
+
 <body>
-    <header>
+  <header>
     <nav style="display: flex; justify-content: start; margin-left: 3.5%;">
-        <img src="assets/131c318dd45b7aa4.svg" alt="" width="120px">
+      <img src="assets/131c318dd45b7aa4.svg" alt="" width="125px">
     </nav>
-</header>
-<main>
+  </header>
+  <main>
     <div id="login">
-    <form id="login-form" action="login">
+      <form id="login-form" action="login">
         <div class="welcome">
-  <h4>Welcome back!</h4>
-  <p>We're so excited to see you again!</p>
-</div>
-<div class="email">
-  <label for="email">EMAIL OR PHONE NUMBER <span>*</span></label> <br>
-  <input type="email" name="" id="email" required>
-</div>
-<div class="password">
-  <label for="pass">PASSWORD <span>*</span></label> <br>
-  <input type="password" name="" id="pass" required>
-  <p>Forget your password?</p>
-</div>
-<div class="button">
-  <button type="submit">Log In</button>
-  <p>Need an account? <span>Register</span></p>
-</div>
-    </form>
-    <div class="QR-info"></div>
-</div>
-</main>
+          <h4>Welcome back!</h4>
+          <p>We're so excited to see you again!</p>
+        </div>
+        <div class="email">
+          <label for="email">EMAIL OR PHONE NUMBER <span>*</span></label> <br>
+          <input type="email" name="" id="email" required>
+        </div>
+        <div class="password">
+          <label for="pass">PASSWORD <span>*</span></label> <br>
+          <input type="password" name="" id="pass" required>
+          <p>Forget your password?</p>
+        </div>
+        <div class="button">
+          <button type="submit">Log In</button>
+          <p>Need an account? <span onclick="signUp()">Register</span></p>
+        </div>
+      </form>
+      <div class="QR-info">
+        <div class="discordQR">
+          <div class="dis-icon"><i class="fa-brands fa-discord" style="color: #ffffff;"></i></div>
+        </div>
+        <div class="login-info">
+          <h4>Log in with QR code</h4>
+           <p>Scan this with <b>the Discord mobile <br> app</b> to login instantly.</p>
+           <span>Or, sign in with passkey</span>
+
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="script.js"></script>
 </body>
+
 </html>
