@@ -354,3 +354,17 @@ section > .signup{
 .sign{
     width: 88%;
 }
+.DOB{
+    width: 150px;
+    border: 1px solid white;
+    position: relative;
+}
+#month{
+    font-weight: bold;
+}
+#monthSelect{
+    top: 50%;
+    right: 2%;
+    z-index: 1;
+    position: absolute;
+}
