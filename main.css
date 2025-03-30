@@ -212,7 +212,6 @@ hr {
 }
 #user{
     display: flex;
-    justify-content: space-between;
     align-items: center;
     background-color: rgb(27, 27, 27);
     width: 100%;
@@ -220,12 +219,28 @@ hr {
     position: absolute;
     bottom: 0;
 }
+#user .audio-info{
+    align-items: center;
+    height: 100%;
+    width: 5vw;
+    display: flex;
+    justify-content: space-evenly;
+}
 .profile{
     height: 100%;
     color: white;
     align-items: center;
     display: flex;
-    width: 60%;
+    width: 70%;
+}
+.profile .user-names{
+    margin-left: 2%;
+    width: 8vw;
+    display: flex;
+    flex-direction: column;
+}
+.profile .user-names span{
+    font-size: 12;
 }
 .profile .box{
     margin-left: 5%;
@@ -233,19 +248,19 @@ hr {
     justify-content: center;
     align-items: center;
     color: black;
-    height: 50px;
+    height: 40px;
     border-radius: 100px;
-    width: 50px;
+    width: 40px;
     background-color: gray;
 }
-.profile span{
-    font-weight: 400;
-    margin-left: 5%;
+.profile .last-name{
+    /* display: none; */
+    font-size: 12px;
 }
 .profile .box span{
     margin-left: 0%;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 28px;
 }
 #upper-AI{
     width: 100%;
