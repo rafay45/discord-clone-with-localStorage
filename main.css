@@ -394,10 +394,22 @@ hr {
     /* border: 1px solid red; */
 }
 .chat{
+    display: flex;
+    justify-content: center;
     position: relative;
     width: 70%;
     height: 100%;
-    /* border: 1px solid pink; */
+    border: 1px solid pink;
+}
+.inner-chat{
+    color: white;
+    overflow-y: scroll;
+    scroll-snap-type: mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    border: 1px solid green;
+    height: 88%;
+    width: 98%;
 }
 .chat .input{
     display: flex;
