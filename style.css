@@ -398,9 +398,9 @@ select option {
     display: flex;
 }
 
-.optional > input[type="checkbox"] {
+.optional>input[type="checkbox"] {
     cursor: pointer;
-    appearance: none; 
+    appearance: none;
     width: 28px;
     height: 28px;
     border: 1px solid rgb(177, 175, 175);
@@ -410,11 +410,11 @@ select option {
     position: relative;
 }
 
-.optional > input[type="checkbox"]:checked {
+.optional>input[type="checkbox"]:checked {
     background-color: #3157ca;
 }
 
-.optional > input[type="checkbox"]::after {
+.optional>input[type="checkbox"]::after {
     content: "✔";
     font-size: 14px;
     color: white;
@@ -425,7 +425,7 @@ select option {
     display: none;
 }
 
-.optional > input[type="checkbox"]:checked::after {
+.optional>input[type="checkbox"]:checked::after {
     display: block;
 }
 
@@ -435,17 +435,21 @@ select option {
     font-size: 12px;
     font-weight: 100;
 }
-.continue{
+
+.continue {
     width: 87%;
 }
-.already{
+
+.already {
     width: 87%;
 }
-.already > p{
+
+.already>p {
     font-size: 15px;
     color: #1E90FF;
 }
-.already > p:hover{
+
+.already>p:hover {
     text-decoration: underline;
     cursor: pointer;
 }

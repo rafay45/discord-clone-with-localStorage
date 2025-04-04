@@ -399,18 +399,24 @@ hr {
     position: relative;
     width: 70%;
     height: 100%;
-    border: 1px solid pink;
 }
 .inner-chat{
+    margin-left: 1%;
     color: white;
-    overflow-y: scroll;
-    scroll-snap-type: mandatory;
+    overflow-y: auto;
     scroll-behavior: smooth;
-    scrollbar-width: thin;
-    border: 1px solid green;
     height: 88%;
     width: 98%;
 }
+.inner-chat::-webkit-scrollbar {
+    width: 8px;
+}
+.inner-chat::-webkit-scrollbar-thumb{
+    border-radius: 100px;
+    background: #1f1e1e;
+    cursor: pointer;
+}
+
 .chat .input{
     display: flex;
     /* justify-content: center; */
