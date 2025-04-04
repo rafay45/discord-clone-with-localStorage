@@ -488,3 +488,6 @@ hr {
     height: 50vh;
     width: 100%;
 }
+.audio-info svg{
+    cursor: pointer;
+}
