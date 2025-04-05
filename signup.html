@@ -17,7 +17,7 @@
 <body>
     <section>
         <div class="sign-dis"><img src="assets/131c318dd45b7aa4.svg" alt=""></div>
-        <div class="signup animate__animated animate__fadeInDown" style="animation-duration: 0.3s;">
+        <form id="signupForm" class="signup animate__animated animate__fadeInDown" style="animation-duration: 0.3s;">
          <h4>Create an account</h4>
          <div class="sign">
             <label for="email">EMAIL <span>*</span></label> <br>
@@ -29,9 +29,9 @@
             <p id="dis-para" style="display: none; color: white; font-size: 13px; margin-top: 1%;">This is how others see you. You can use special character and emoji.</p>
           </div>
          <div class="sign">
-            <label for="userName">USERNAME <span>*</span></label> <br>
+            <label for="userName">USERNAME <span>*</span></label><br>
             <input type="text" name="" id="userName" required>
-            <p id="user-para" style="display: none; color: white; font-size: 13px; margin-top: 1%;">This is how others see you. You can use special character and emoji.</p>
+            <p id="user-para" style="display: none; color: white; font-size: 13px; margin-top: 1%;">Please only use number, latter, uppercorse_, periods</p>
           </div>
          <div class="sign">
             <label for="password">PASSWORD <span>*</span></label> <br>
@@ -42,17 +42,17 @@
             <div class="personal-info">
          <div class="DOB">
             <div class="input-group  mb-3">
-              <input type="text" name="" id="" placeholder="Month">
+              <input type="text" name="" id="month" placeholder="Month">
             </div>
           </div>
          <div class="DOB">
             <div class="input-group  mb-3">
-              <input type="text" name="" id="" placeholder="Date">
+              <input type="text" name="" id="date" placeholder="Date">
             </div>
           </div>
          <div class="DOB">
             <div class="input-group  mb-3">
-              <input type="text" name="" id="" placeholder="Year">
+              <input type="text" name="" id="year" placeholder="Year">
             </div>
           </div>
        
@@ -64,14 +64,14 @@
         </div>
         <div class="continue">
         <div class="button">
-          <button onclick="home()" type="submit">Continue</button>
+          <button onsubmit="home()" type="submit">Continue</button>
           <p style="font-size: 11px;">By rigistering, you agree to Discord's <span>Term of Service</span> and <span>Privacy Policy</span>.</p>
         </div>
       </div>
       <div class="already">
         <p onclick="logIn()">Already have an account?</p>
       </div>
-        </div>
+    </form>
     </section>
 
     <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

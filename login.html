@@ -31,16 +31,16 @@
           <p>We're so excited to see you again!</p>
         </div>
         <div class="email">
-          <label for="email">EMAIL OR PHONE NUMBER <span>*</span></label> <br>
-          <input type="email" name="" id="email" required>
+          <label for="login-email">EMAIL OR PHONE NUMBER <span>*</span></label> <br>
+          <input type="email" name="" id="login-email" required>
         </div>
         <div class="password">
-          <label for="pass">PASSWORD <span>*</span></label> <br>
-          <input type="password" name="" id="pass" required>
+          <label for="login-pass">PASSWORD <span>*</span></label> <br>
+          <input type="password" name="" id="login-pass" required>
           <p>Forget your password?</p>
         </div>
         <div class="button">
-          <button type="submit">Log In</button>
+          <button onclick="logIn()" type="submit">Log In</button>
           <p>Need an account? <span onclick="signUp()">Register</span></p>
         </div>
       </form>
