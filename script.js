@@ -2,7 +2,7 @@ function signUp() {
     window.location.href = "signup.html"
 }
 function logIn() {
-    window.location.href = "home.html"
+    window.location.href = "login.html"
 }
 let screen = document.getElementById('screen');
 let upperAI = document.getElementById('bac-AI');
@@ -41,15 +41,32 @@ let signpass = document.getElementById('password');
 let signMonth = document.getElementById('month');
 let signDate = document.getElementById('date');
 let signYear = document.getElementById('year');
-let singupInfo = JSON.parse(localStorage.getItem('saveSignupInfo')) || []
 
 
+let singupInfo = JSON.parse(localStorage.getItem('saveSignupInfo')) || [];
+const signupForm = document.getElementById('signupForm');
+signupForm.addEventListener('submit', function (event) {
+    event.preventDefault();
+    singupInfo.push(singEmail.value, displayName.value, userName.value, signpass.value, signMonth.value, signDate.value, signYear.value)
+    localStorage.setItem('saveSignupInfo', JSON.stringify(singupInfo));
+    window.location.href = "home.html";
+})
 
-function home() {
-    singupInfo.push(singEmail.value , signpass.value)
-    localStorage.setItem('saveSignupInfo', JSON.stringify(singupInfo))
-    window.location.href = "home.html"
-}
+let loginEmail = document.getElementById('loginEmail');
+let loginPass = document.getElementById('loginPass');
+
+let loginInfo = JSON.parse(localStorage.getItem('saveLoginInfo')) || [];
+
+let loginEmailspan = document.getElementById('loginEmailspan');
+let loginPasswordSpan = document.getElementById('loginPasswordSpan');
+const loginForm = document.getElementById('login');
+loginForm.addEventListener('submit', function () {
+    e.preventDefault();
+    loginInfo.push(loginEmail.value, loginPass.value)
+    localStorage.setItem('saveLoginInfo', JSON.stringify(loginInfo));
+    window.location.href = "home.html";
+})
+
 
 
 

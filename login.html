@@ -24,26 +24,29 @@
     </nav>
   </header>
   <main>
-    <div class="animate__animated animate__fadeInDown" style="animation-duration: 0.3s;" id="login">
-      <form id="login-form" action="login">
+    <form class="animate__animated animate__fadeInDown" style="animation-duration: 0.3s;" id="login">
+      <div id="login-form" action="login">
         <div class="welcome">
           <h4>Welcome back!</h4>
           <p>We're so excited to see you again!</p>
+
+
         </div>
         <div class="email">
-          <label for="login-email">EMAIL OR PHONE NUMBER <span>*</span></label> <br>
-          <input type="email" name="" id="login-email" required>
+          <label for="loginEmail">EMAIL OR PHONE NUMBER <span id="loginEmailspan">*</span></label> <br>
+          <input type="email" name="" id="loginEmail" required>
         </div>
         <div class="password">
-          <label for="login-pass">PASSWORD <span>*</span></label> <br>
-          <input type="password" name="" id="login-pass" required>
+          <label for="loginPass">PASSWORD <span id="loginPasswordSpan">*</span></label> <br>
+          <input type="password" name="" id="loginPass" required>
           <p>Forget your password?</p>
         </div>
+
         <div class="button">
-          <button onclick="logIn()" type="submit">Log In</button>
+          <button type="submit">Log In</button>
           <p>Need an account? <span onclick="signUp()">Register</span></p>
         </div>
-      </form>
+      </div>
       <div class="QR-info">
         <div class="discordQR">
           <div class="dis-icon"><i class="fa-brands fa-discord" style="color: #ffffff;"></i></div>
@@ -55,7 +58,7 @@
 
         </div>
       </div>
-    </div>
+    </form>
   </main>
   <script src="script.js"></script>
 </body>
