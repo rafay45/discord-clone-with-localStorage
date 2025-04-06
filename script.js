@@ -4,6 +4,13 @@ function signUp() {
 function logIn() {
     window.location.href = "login.html"
 }
+let logout = document.getElementById('out');
+function out(){
+    logout.style.display = "block"
+}
+function loged(){
+    window.location.href = "login.html"
+}
 let screen = document.getElementById('screen');
 let upperAI = document.getElementById('bac-AI');
 let ai = document.getElementById('AI-msg');
@@ -60,7 +67,7 @@ let loginInfo = JSON.parse(localStorage.getItem('saveLoginInfo')) || [];
 let loginEmailspan = document.getElementById('loginEmailspan');
 let loginPasswordSpan = document.getElementById('loginPasswordSpan');
 const loginForm = document.getElementById('login');
-loginForm.addEventListener('submit', function () {
+loginForm.addEventListener('submit', function (e) {
     e.preventDefault();
     loginInfo.push(loginEmail.value, loginPass.value)
     localStorage.setItem('saveLoginInfo', JSON.stringify(loginInfo));
