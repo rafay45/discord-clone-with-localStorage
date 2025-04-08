@@ -14,7 +14,6 @@
   href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<script src="script.js"></script>
   <title>Discord</title>
 </head>
 
@@ -34,11 +33,11 @@
 
         </div>
         <div class="email">
-          <label for="loginEmail">EMAIL OR PHONE NUMBER <span id="loginEmailspan">*</span></label> <br>
+          <label id="labelEmail" for="loginEmail">EMAIL OR PHONE NUMBER <span id="loginEmailspan">*</span></label> <br>
           <input type="email" name="" id="loginEmail" required>
         </div>
         <div class="password">
-          <label for="loginPass">PASSWORD <span id="loginPasswordSpan">*</span></label> <br>
+          <label id="labelPassword" for="loginPass">PASSWORD <span id="loginPasswordSpan">*</span></label> <br>
           <input type="password" name="" id="loginPass" required>
           <p>Forget your password?</p>
         </div>
@@ -61,7 +60,7 @@
       </div>
     </form>
   </main>
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 
 </html>

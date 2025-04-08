@@ -452,4 +452,5 @@ select option {
 .already>p:hover {
     text-decoration: underline;
     cursor: pointer;
+    
 }
