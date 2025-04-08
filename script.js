@@ -4,6 +4,7 @@ let signMonth = document.getElementById('month');
 let signDate = document.getElementById('date');
 let signYear = document.getElementById('year');
 
+
 let displayName = document.getElementById('display');
 let userName = document.getElementById('user-Name');
 let disPara = document.getElementById('dis-para');
@@ -27,11 +28,16 @@ if (displayName) {
     });
 }
 
-if (signMonth.value > 0 && signMonth.value < 10){
-    signMonth.value = "0" + signMonth
-}
 let singupInfo = JSON.parse(localStorage.getItem('saveSignupInfo')) || [];
 const signupForm = document.getElementById('signupForm');
+let displayUserName = document.getElementById('displayUserName');
+if (displayUserName) {
+    displayUserName.innerText = singupInfo[1]
+}
+let userIcon = document.getElementById('userIcon');
+if(userIcon){
+    userIcon.innerText = singupInfo[1][0]
+}
 if (signupForm) {
     signupForm.addEventListener('submit', function (event) {
         event.preventDefault();
@@ -57,11 +63,6 @@ let loginPasswordSpan = document.getElementById('loginPasswordSpan');
 let labelEmail = document.getElementById('labelEmail');
 let labelPassword = document.getElementById('labelPassword');
 
-loginPasswordSpan.style.fontStyle = "italic"
-loginPasswordSpan.style.fontWeight = ""
-loginEmailspan.style.fontStyle = "italic"
-loginEmailspan.style.fontWeight = ""
-
 let loginInfo = JSON.parse(localStorage.getItem('saveLoginInfo')) || [];
 if (loginForm) {
     loginForm.addEventListener('submit', function (e) {
@@ -72,12 +73,20 @@ if (loginForm) {
                 localStorage.setItem('saveLoginInfo', JSON.stringify(loginInfo));
                 window.location.href = "home.html";
             } else {
+                loginPasswordSpan.style.fontStyle = "italic"
+                loginPasswordSpan.style.fontWeight = ""
+                loginEmailspan.style.fontStyle = "italic"
+                loginEmailspan.style.fontWeight = ""
                 labelPassword.style.color = "rgb(245, 69, 69)"
                 labelEmail.style.color = "rgb(245, 69, 69)"
                 loginEmailspan.innerText = "- Login or password is invalid."
                 loginPasswordSpan.innerText = "- Login or password is invalid."
             }
         } else {
+            loginPasswordSpan.style.fontStyle = "italic"
+            loginPasswordSpan.style.fontWeight = ""
+            loginEmailspan.style.fontStyle = "italic"
+            loginEmailspan.style.fontWeight = ""
             labelPassword.style.color = "rgb(245, 69, 69)"
             labelEmail.style.color = "rgb(245, 69, 69)"
             loginPasswordSpan.innerText = "- Login or email is invalid."
@@ -92,6 +101,7 @@ function signUp() {
 function logIn() {
     window.location.href = "login.html"
 }
+
 
 
 
