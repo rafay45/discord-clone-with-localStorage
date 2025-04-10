@@ -428,7 +428,7 @@
         </div>
 
         <div id="AI-msg">
-            <nav class="AI-nav">
+            <nav class="AI-nav"> 
                 <div class="AI-box">
                     <i onclick="left()" class="fa-solid fa-arrow-left"
                         style="color: rgb(177, 175, 175); cursor: pointer;"></i>
@@ -486,7 +486,7 @@
             </nav>
             <div class="AI-message">
                 <div class="chat">
-                    <div class="inner-chat"></div>
+                    <div id="msges" class="inner-chat"></div>
                     <div class="input">
                         <div class="svg"><svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg"
                                 width="20" height="20" fill="none" viewBox="0 0 24 24">
@@ -494,7 +494,7 @@
                                 <path fill="rgb(177, 175, 175)" fill-rule="evenodd"
                                     d="M12 23a11 11 0 1 0 0-22 11 11 0 0 0 0 22Zm0-17a1 1 0 0 1 1 1v4h4a1 1 0 1 1 0 2h-4v4a1 1 0 1 1-2 0v-4H7a1 1 0 1 1 0-2h4V7a1 1 0 0 1 1-1Z"
                                     clip-rule="evenodd" class="attachButtonPlus__0923f"></path>
-                            </svg><input type="text" name="" id="" placeholder="Message @AI"></div>
+                            </svg><textarea id="chatMsg" placeholder="Message @AI" rows="1"></textarea></div>
                         <div class="emojis"><svg xmlns="http://www.w3.org/2000/svg"
                                 xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="24" height="24"
                                 preserveAspectRatio="xMidYMid meet"
@@ -829,7 +829,6 @@
     </div>
 
     <script src="script.js"></script>
-    <script src="main.js"></script>
 </body>
 
 </html>

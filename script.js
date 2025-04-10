@@ -35,7 +35,7 @@ if (displayUserName) {
     displayUserName.innerText = singupInfo[1]
 }
 let userIcon = document.getElementById('userIcon');
-if(userIcon){
+if (userIcon) {
     userIcon.innerText = singupInfo[1][0]
 }
 if (signupForm) {
@@ -96,8 +96,8 @@ if (loginForm) {
 }
 let exit = document.getElementById('exit');
 let logout = document.getElementById('out');
-if(exit){
-    exit.addEventListener('click', function(){
+if (exit) {
+    exit.addEventListener('click', function () {
         logout.style.display = "block"
     })
     document.addEventListener('click', function (e) {
@@ -121,7 +121,7 @@ let screen = document.getElementById('screen');
 let upperAI = document.getElementById('bac-AI');
 let ai = document.getElementById('AI-msg');
 
-if(screen , upperAI , ai){
+if (screen, upperAI, ai) {
     function AI() {
         upperAI.style.backgroundColor = "rgb(54, 54, 54)"
         screen.style.display = "none"
@@ -133,3 +133,24 @@ if(screen , upperAI , ai){
         ai.style.display = "none"
     }
 }
+let msges = document.getElementById('msges');
+let chatMsg = document.getElementById('chatMsg');
+let msgWords = ["Hey", "How are you", "What is HTML", "What is CSS", "What is javaScript"]
+if (chatMsg) {
+    chatMsg.addEventListener('keypress', (a) => {
+        if (a.key === 'Enter' && !a.shiftKey) {
+            if (chatMsg.value != "") {
+                a.preventDefault()
+                if (chatMsg.value == msgWords[0]) {
+                    msges.innerHTML += `<div id="chatPara"><div class="aiBox"><span id="userIcon">${singupInfo[1][0]}</span></div><span>Hey</span></div>`
+                    chatMsg.value = ""
+                    setTimeout(() => {
+                        msges.innerHTML += `<div id="chatParaAi"><div class="box-1"><img src="assets/ai-image.jpg" alt=""></div><span>Hey ${singupInfo[1]}</span></div>`
+                    }, 2000);
+
+                }
+            }
+        }
+    })
+}
+
