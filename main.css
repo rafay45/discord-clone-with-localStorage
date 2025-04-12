@@ -465,6 +465,7 @@ hr {
 }
 
 .inner-chat {
+    position: relative;
     margin-left: 1%;
     color: white;
     overflow-y: auto;
@@ -598,14 +599,6 @@ hr {
     border: 1px solid gray;
     display: none;
 }
-#chatParaAi{
-    margin-top: 2%;
-    display: flex;
-}
-#chatParaAi span{
-    align-content: center;
-    margin-left: 1%;
-}
 #chatPara{
     margin-top: 2%;
     display: flex;
@@ -614,3 +607,11 @@ hr {
     align-content: center;
     margin-left: 1%;
 }
+/* #chatPara{
+    margin-top: 2%;
+    display: flex;
+}
+#chatPara span{
+    align-content: center;
+    margin-left: 1%;
+} */

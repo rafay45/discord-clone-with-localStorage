@@ -38,23 +38,34 @@ let userIcon = document.getElementById('userIcon');
 if (userIcon) {
     userIcon.innerText = singupInfo[1][0]
 }
+
 if (signupForm) {
     signupForm.addEventListener('submit', function (event) {
         event.preventDefault();
-        singupInfo.push(
-            singEmail.value,
-            displayName.value,
-            userName.value,
-            signpass.value,
-            signMonth.value,
-            signDate.value,
-            signYear.value
-        );
-        localStorage.setItem('saveSignupInfo', JSON.stringify(singupInfo));
-        window.location.href = "home.html";
+        if(displayName.value[0] === displayName.value[0].toUpperCase()){
+            displayName.style.border = ""
+         if(userName.value.includes('786') || userName.value.includes('98001') || userName.value.includes('7865234')){
+            userName.style.border = ""
+            singupInfo.push(
+                singEmail.value,
+                displayName.value,
+                userName.value,
+                signpass.value,
+                signMonth.value,
+                signDate.value,
+                signYear.value
+            );
+            localStorage.setItem('saveSignupInfo', JSON.stringify(singupInfo));
+            window.location.href = "home.html";
+         }else{
+            userName.style.border = "1px solid rgb(245, 69, 69)"
+            userPara.innerHTML = `<i><b>Available</b>: ${userName.value}786 , ${userName.value}98001 , ${userName.value}7865234</i>`
+         }
+        }else{
+            displayName.style.border = "1px solid rgb(245, 69, 69)"
+        }
     });
 }
-
 const loginForm = document.getElementById('login');
 let loginEmail = document.getElementById('loginEmail');
 let loginPass = document.getElementById('loginPass');
@@ -135,45 +146,56 @@ if (screen, upperAI, ai) {
 }
 let msges = document.getElementById('msges');
 let chatMsg = document.getElementById('chatMsg');
-let msgWords = ["Hey", "How are you?", "I'm pretty good" , "What is HTML", "What is CSS", "What is javaScript"]
+let chatPara = document.getElementById('chatPara');
 
+let msgWords = ["Hey", "How are you?", "I'm pretty good", "What is HTML", "What is CSS", "What is javaScript"]
+let msgAns = [`Hey`, `I'm doing great, thanks for asking! How about you?`, `Nicee! Glad to hear that — pretty good is always a win 😎`]
 if (chatMsg) {
     chatMsg.addEventListener('keypress', (a) => {
         if (a.key === 'Enter' && !a.shiftKey) {
             if (chatMsg.value != "") {
                 a.preventDefault()
-                if (chatMsg.value == msgWords[0]) {
+                if (chatMsg.value == msgWords[0]
+                ) {
                     msges.innerHTML += `<div id="chatPara"><div class="aiBox"><span id="userIcon">${singupInfo[1][0]}</span></div><span>${chatMsg.value}</span></div>`
                     chatMsg.value = ""
                     setTimeout(() => {
-                        msges.innerHTML += `<div id="chatParaAi"><div class="box-1"><img src="assets/ai-image.jpg" alt=""></div><span>Hey ${singupInfo[1]}</span></div>`
+                        msges.innerHTML += `<div id="chatPara"><div class="box-1"><img src="assets/ai-image.jpg" alt=""></div><span>${msgAns[0]} ${singupInfo[1]}</span></div>`
                     }, 2000);
 
                 }
-               else if (chatMsg.value == msgWords[1]) {
+                else if (chatMsg.value == msgWords[1]) {
                     msges.innerHTML += `<div id="chatPara"><div class="aiBox"><span id="userIcon">${singupInfo[1][0]}</span></div><span>${chatMsg.value}</span></div>`
                     chatMsg.value = ""
                     setTimeout(() => {
-                        msges.innerHTML += `<div id="chatParaAi"><div class="box-1"><img src="assets/ai-image.jpg" alt=""></div><span>I'm doing great, thanks for asking! How about you?</span></div>`
+                        msges.innerHTML += `<div id="chatPara"><div class="box-1"><img src="assets/ai-image.jpg" alt=""></div><span>${msgAns[1]}</span></div>`
                     }, 2000);
 
                 }
-               else if (chatMsg.value == msgWords[2]) {
+                else if (chatMsg.value == msgWords[2]) {
                     msges.innerHTML += `<div id="chatPara"><div class="aiBox"><span id="userIcon">${singupInfo[1][0]}</span></div><span>${chatMsg.value}</span></div>`
                     chatMsg.value = ""
                     setTimeout(() => {
-                        msges.innerHTML += `<div id="chatParaAi"><div class="box-1"><img src="assets/ai-image.jpg" alt=""></div><span>Nicee! Glad to hear that — pretty good is always a win 😎</span></div>`
+                        msges.innerHTML += `<div id="chatPara"><div class="box-1"><img src="assets/ai-image.jpg" alt=""></div><span>${msgAns[2]}</span></div>`
                     }, 2000);
 
                 }
-               else if (chatMsg.value == msgWords[3]) {
-                    msges.innerHTML += `<div id="chatPara"><div class="aiBox"><span id="userIcon">${singupInfo[1][0]}</span></div><span>${chatMsg.value}</span></div>`
-                    chatMsg.value = ""
-                    setTimeout(() => {
-                        msges.innerHTML += `<div id="chatParaAi"><div class="box-1"><img src="assets/ai-image.jpg" alt=""></div><span>Nicee! Glad to hear that — pretty good is always a win 😎</span></div>`
-                    }, 2000);
+                // else if (chatMsg.value == msgWords[3]) {
+                //     msges.innerHTML += `<div id="chatPara"><div class="aiBox"><span id="userIcon">${singupInfo[1][0]}</span></div><span>${chatMsg.value}</span></div>`
+                //     chatMsg.value = ""
+                //     setTimeout(() => {
+                //         msges.innerHTML += `<div id="chatParaAi"><div class="box-1"><img src="assets/ai-image.jpg" alt=""></div><span>${msgAns[3]}</span></div>`
+                //     }, 2000);
 
-                }
+                // }
+                // else if (chatMsg.value == msgWords[4]) {
+                //     msges.innerHTML += `<div id="chatPara"><div class="aiBox"><span id="userIcon">${singupInfo[1][0]}</span></div><span>${chatMsg.value}</span></div>`
+                //     chatMsg.value = ""
+                //     setTimeout(() => {
+                //         msges.innerHTML += `<div id="chatParaAi"><div class="box-1"><img src="assets/ai-image.jpg" alt=""></div><span>${msgAns[3]}</span></div>`
+                //     }, 2000);
+
+                // }
             }
         }
     })
