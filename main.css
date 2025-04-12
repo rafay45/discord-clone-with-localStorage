@@ -464,21 +464,22 @@ hr {
     height: 100%;
 }
 
-.inner-chat {
-    position: relative;
+#msges {
     margin-left: 1%;
     color: white;
+    display: flex;
+    flex-direction: column;
     overflow-y: auto;
     scroll-behavior: smooth;
     height: 88%;
     width: 98%;
 }
 
-.inner-chat::-webkit-scrollbar {
+#msges::-webkit-scrollbar {
     width: 8px;
 }
 
-.inner-chat::-webkit-scrollbar-thumb {
+#msges::-webkit-scrollbar-thumb {
     border-radius: 100px;
     background: #1f1e1e;
     cursor: pointer;
@@ -600,18 +601,11 @@ hr {
     display: none;
 }
 #chatPara{
-    margin-top: 2%;
+    margin-top: 1%;
+    margin-bottom: 1%;
     display: flex;
 }
 #chatPara span{
     align-content: center;
     margin-left: 1%;
 }
-/* #chatPara{
-    margin-top: 2%;
-    display: flex;
-}
-#chatPara span{
-    align-content: center;
-    margin-left: 1%;
-} */
