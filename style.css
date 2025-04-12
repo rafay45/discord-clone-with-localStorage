@@ -429,7 +429,6 @@ select option {
     display: block;
 }
 
-
 .optional>label {
     cursor: pointer;
     font-size: 12px;
@@ -452,5 +451,5 @@ select option {
 .already>p:hover {
     text-decoration: underline;
     cursor: pointer;
-    
+
 }
