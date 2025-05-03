@@ -28,9 +28,11 @@ if (displayName) {
     });
 }
 
+let found = "found";
 let singupInfo = JSON.parse(localStorage.getItem('saveSignupInfo')) || [];
 const signupForm = document.getElementById('signupForm');
 let displayUserName = document.getElementById('displayUserName');
+let emailSpan = document.getElementById('emailSpan');
 if (displayUserName) {
     displayUserName.innerText = singupInfo[1]
 }
@@ -38,31 +40,43 @@ let userIcon = document.getElementById('userIcon');
 if (userIcon) {
     userIcon.innerText = singupInfo[1][0]
 }
+let pageone = document.getElementById("pageone")
+let alert = document.getElementById("alertBox")
+console.log(pageone);
+// if(singupInfo.includes(found)){
 
+// }
 if (signupForm) {
     signupForm.addEventListener('submit', function (event) {
         event.preventDefault();
-        if (displayName.value[0] === displayName.value[0].toUpperCase()) {
-            displayName.style.border = ""
-            if (userName.value.includes('786') || userName.value.includes('98001') || userName.value.includes('7865234')) {
-                userName.style.border = ""
-                singupInfo.push(
-                    singEmail.value,
-                    displayName.value,
-                    userName.value,
-                    signpass.value,
-                    signMonth.value,
-                    signDate.value,
-                    signYear.value
-                );
-                localStorage.setItem('saveSignupInfo', JSON.stringify(singupInfo));
-                window.location.href = "home.html";
+        if (singEmail.value != singupInfo[0]) {
+            if (displayName.value[0] === displayName.value[0].toUpperCase()) {
+                displayName.style.border = ""
+                if (userName.value.includes('786') || userName.value.includes('98001') || userName.value.includes('7865234')) {
+                    userName.style.border = ""
+                    singupInfo.push(
+                        singEmail.value,
+                        displayName.value,
+                        userName.value,
+                        signpass.value,
+                        signMonth.value,
+                        signDate.value,
+                        signYear.value,
+                        found,
+                    );
+                    localStorage.setItem('saveSignupInfo', JSON.stringify(singupInfo));
+                    window.location.href = "home.html"
+
+                } else {
+                    userName.style.border = "1px solid rgb(245, 69, 69)"
+                    userPara.innerHTML = `<i><b>Available</b>: ${userName.value}786 , ${userName.value}98001 , ${userName.value}7865234</i>`
+                }
             } else {
-                userName.style.border = "1px solid rgb(245, 69, 69)"
-                userPara.innerHTML = `<i><b>Available</b>: ${userName.value}786 , ${userName.value}98001 , ${userName.value}7865234</i>`
+                displayName.style.border = "1px solid rgb(245, 69, 69)"
             }
         } else {
-            displayName.style.border = "1px solid rgb(245, 69, 69)"
+            emailSpan.style.fontStyle = "italic"
+            emailSpan.innerText = "- Email already exites"
         }
     });
 }
