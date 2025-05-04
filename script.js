@@ -27,12 +27,22 @@ if (displayName) {
         disPara.style.display = "none"
     });
 }
-
-let found = "found";
 let singupInfo = JSON.parse(localStorage.getItem('saveSignupInfo')) || [];
+let token = JSON.parse(localStorage.getItem('addtoken')) || [];
 const signupForm = document.getElementById('signupForm');
 let displayUserName = document.getElementById('displayUserName');
 let emailSpan = document.getElementById('emailSpan');
+
+function signUp() {
+    window.location.href = "signup.html";
+}
+function logIn() {
+    window.location.href = "login.html";
+}
+function loged() {
+    window.location.href = "login.html";
+    localStorage.removeItem('addtoken')
+}
 if (displayUserName) {
     displayUserName.innerText = singupInfo[1]
 }
@@ -43,9 +53,11 @@ if (userIcon) {
 let pageone = document.getElementById("pageone")
 let alert = document.getElementById("alertBox")
 console.log(pageone);
-// if(singupInfo.includes(found)){
-
-// }
+if (localStorage.getItem('addtoken')) {
+    pageone.style.display = "block"
+    alert.style.display = "none"
+}
+let tokenAdded = "add"
 if (signupForm) {
     signupForm.addEventListener('submit', function (event) {
         event.preventDefault();
@@ -62,9 +74,12 @@ if (signupForm) {
                         signMonth.value,
                         signDate.value,
                         signYear.value,
-                        found,
                     );
+                    token.push(
+                        tokenAdded
+                    )
                     localStorage.setItem('saveSignupInfo', JSON.stringify(singupInfo));
+                    localStorage.setItem('addtoken', JSON.stringify(token));
                     window.location.href = "home.html"
 
                 } else {
@@ -88,14 +103,22 @@ let loginPasswordSpan = document.getElementById('loginPasswordSpan');
 let labelEmail = document.getElementById('labelEmail');
 let labelPassword = document.getElementById('labelPassword');
 
+
 let loginInfo = JSON.parse(localStorage.getItem('saveLoginInfo')) || [];
 if (loginForm) {
     loginForm.addEventListener('submit', function (e) {
         e.preventDefault();
         if (loginEmail.value === singupInfo[0]) {
             if (loginPass.value === singupInfo[3]) {
-                loginInfo.push(loginEmail.value, loginPass.value)
+                loginInfo.push(
+                    loginEmail.value,
+                    loginPass.value,
+                )
+                token.push(
+                    tokenAdded
+                )
                 localStorage.setItem('saveLoginInfo', JSON.stringify(loginInfo));
+                localStorage.setItem('addtoken', JSON.stringify(token));
                 window.location.href = "home.html";
             } else {
                 loginPasswordSpan.style.fontStyle = "italic"
@@ -130,16 +153,6 @@ if (exit) {
             logout.style.display = "none";
         }
     });
-}
-
-function signUp() {
-    window.location.href = "signup.html"
-}
-function logIn() {
-    window.location.href = "login.html"
-}
-function loged() {
-    window.location.href = "login.html"
 }
 
 let screen = document.getElementById('screen');
