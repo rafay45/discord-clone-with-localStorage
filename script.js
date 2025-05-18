@@ -52,6 +52,8 @@ if (userIcon) {
 }
 let pageone = document.getElementById("pageone")
 let alert = document.getElementById("alertBox")
+
+
 console.log(pageone);
 if (localStorage.getItem('addtoken')) {
     pageone.style.display = "block"
@@ -175,10 +177,8 @@ let msges = document.getElementById('msges');
 let chatMsg = document.getElementById('chatMsg');
 let chatPara = document.getElementById('chatPara');
 let typing = document.getElementById('typing')
-
-let msgWords = ["Hey", "How are you?", "I'm pretty good", "Yea btw What is HTML?", "What is CSS?", "What is javaScript?", "Okay! Thank you"]
+let msgWords = ["hey", "how are you?", "i'm pretty good", "yea btw what is html?", "what is css?", "what is javascript?", "okay! thank you"]
 let msgAns = [`Hey`, `I'm doing great, thanks for asking! How about you?`, `Nicee! Glad to hear that — pretty good is always a win 😎`, `HTML (Hypertext Markup Language) is a standard markup language used to define <br> the structure of web pages and web applications. It uses tags and elements to <br> structure content like text, images, links, and forms, which are displayed in a <br> web browser. <br> 
-
 In simple terms, HTML creates the skeleton of a webpage, including text, headings, <br> images, links, and buttons, to present content to users in a browser.` , `CSS (Cascading Style Sheets) is a stylesheet language used to describe the presentation <br> and design of a web page written in HTML. It controls how the elements on a web page <br> should look — including their colors, fonts, spacing, layout, and responsiveness.`, `JavaScript is a high-level programming language used to create interactive, dynamic, <br> and functional web pages. It allows developers to add features like form validation, <br> animations, events, and real-time updates to a website. <br>
 <b>In simple words</b>: JavaScript brings life and interactivity to static web pages.` , `You're very welcome! 😊 <br>
 If you ever need help with HTML, CSS, JavaScript — or anything else — just hit me up anytime. <br>
@@ -187,9 +187,9 @@ Happy coding, ${singupInfo[1]}!
 if (chatMsg) {
     chatMsg.addEventListener('keypress', (a) => {
         if (a.key === 'Enter' && !a.shiftKey) {
-            if (chatMsg.value != "") {
+            if (chatMsg.value.trim().toLowerCase() != "") {
                 a.preventDefault()
-                if (chatMsg.value == msgWords[0]) {
+                if (chatMsg.value.toLowerCase() === msgWords[0]) {
                     msges.innerHTML += `<div id="chatPara"><div class="aiBox"><span id="userIcon">${singupInfo[1][0]}</span></div><span>${chatMsg.value}</span></div>`
                     msges.scrollTop = msges.scrollHeight;
                     chatMsg.value = ""
@@ -200,7 +200,7 @@ if (chatMsg) {
                         typing.style.display = "none";
                     }, 2000);
                 }
-                else if (chatMsg.value == msgWords[1]) {
+                else if (chatMsg.value.trim().toLowerCase() === msgWords[1]) {
                     msges.innerHTML += `<div id="chatPara"><div class="aiBox"><span id="userIcon">${singupInfo[1][0]}</span></div><span>${chatMsg.value}</span></div>`
                     msges.scrollTop = msges.scrollHeight;
                     chatMsg.value = ""
@@ -212,7 +212,7 @@ if (chatMsg) {
                     }, 3000);
 
                 }
-                else if (chatMsg.value == msgWords[2]) {
+                else if (chatMsg.value.toLowerCase() == msgWords[2]) {
                     msges.innerHTML += `<div id="chatPara"><div class="aiBox"><span id="userIcon">${singupInfo[1][0]}</span></div><span>${chatMsg.value}</span></div>`
                     msges.scrollTop = msges.scrollHeight;
                     chatMsg.value = ""
@@ -223,7 +223,7 @@ if (chatMsg) {
                         typing.style.display = "none";
                     }, 3000);
                 }
-                else if (chatMsg.value == msgWords[3]) {
+                else if (chatMsg.value.toLowerCase() == msgWords[3]) {
                     msges.innerHTML += `<div id="chatPara"><div class="aiBox"><span id="userIcon">${singupInfo[1][0]}</span></div><span>${chatMsg.value}</span></div>`
                     msges.scrollTop = msges.scrollHeight;
                     chatMsg.value = ""
@@ -234,7 +234,7 @@ if (chatMsg) {
                         typing.style.display = "none";
                     }, 4000);
                 }
-                else if (chatMsg.value == msgWords[4]) {
+                else if (chatMsg.value.toLowerCase() == msgWords[4]) {
                     msges.innerHTML += `<div id="chatPara"><div class="aiBox"><span id="userIcon">${singupInfo[1][0]}</span></div><span>${chatMsg.value}</span></div>`
                     msges.scrollTop = msges.scrollHeight;
                     chatMsg.value = ""
@@ -245,7 +245,7 @@ if (chatMsg) {
                         typing.style.display = "none";
                     }, 4000);
                 }
-                else if (chatMsg.value == msgWords[5]) {
+                else if (chatMsg.value.toLowerCase() == msgWords[5]) {
                     msges.innerHTML += `<div id="chatPara"><div class="aiBox"><span id="userIcon">${singupInfo[1][0]}</span></div><span>${chatMsg.value}</span></div>`
                     msges.scrollTop = msges.scrollHeight;
                     chatMsg.value = ""
@@ -256,7 +256,7 @@ if (chatMsg) {
                         typing.style.display = "none";
                     }, 4000);
                 }
-                else if (chatMsg.value == msgWords[6]) {
+                else if (chatMsg.value.toLowerCase() == msgWords[6]) {
                     msges.innerHTML += `<div id="chatPara"><div class="aiBox"><span id="userIcon">${singupInfo[1][0]}</span></div><span>${chatMsg.value}</span></div>`
                     msges.scrollTop = msges.scrollHeight;
                     chatMsg.value = ""
